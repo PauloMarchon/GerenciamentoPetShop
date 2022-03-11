@@ -23,7 +23,7 @@ public class PetShopApplication implements CommandLineRunner{
 		
 		Usuario usuarioAdmin = Usuario.builder()
 							.nome("admin")
-							.login("admin")
+							.email("admin@admin.com")
 							.senha("admin")
 							.build();
 
