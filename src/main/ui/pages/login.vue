@@ -1,6 +1,6 @@
 <template>
 
-<TelaLogin />
+<TelaLoginCadastro />
 
 
 </template>
