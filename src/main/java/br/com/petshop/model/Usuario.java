@@ -1,4 +1,4 @@
-package br.com.petshop.models;
+package br.com.petshop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,17 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
+import lombok.experimental.FieldNameConstants;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+
+@Data
 @Builder
 @Entity
 @Table(name = "usuarios")
@@ -24,14 +22,18 @@ public class Usuario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
     private Long id;
 
-    @Column(name = "nome_usuario", nullable = false)
+    @NotBlank
+    @Column(name = "nome_usuario")
     private String nome;
 
-    @Column(name = "email_usuario", nullable = false, unique = true)
+    @Email
+    @Column(name = "email_usuario")
     private String email;
 
-    @Column(name = "senha_usuario", nullable = false)
+    @NotBlank
+    @Column(name = "senha_usuario")
     private String senha;
 }

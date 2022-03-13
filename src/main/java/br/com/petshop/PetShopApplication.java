@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.petshop.models.Usuario;
+import br.com.petshop.model.Usuario;
 import br.com.petshop.repository.UsuarioRepository;
 
 @SpringBootApplication
