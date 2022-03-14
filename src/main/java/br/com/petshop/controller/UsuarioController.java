@@ -25,11 +25,20 @@ import br.com.petshop.model.Usuario;
 import br.com.petshop.repository.UsuarioRepository;
 
 @RestController
-@RequestMapping("usuario")
+@RequestMapping("/api")
+@CrossOrigin("http://localhost:8080")
 public class UsuarioController {
     
     @Autowired
+    UsuarioRepository usuarioRepository;
+
+    @Autowired
     UsuarioManager usuarioManager;
+
+    @GetMapping("/usuarios")
+    public List<Usuario> listaUsuarios(){
+        return usuarioRepository.findAll();
+    }
 
     @PostMapping("salvar")
     public @ResponseBody ResponseEntity<Usuario> salvar (@RequestBody @Validated Usuario usuario){
