@@ -1,19 +1,13 @@
 <template>
-
-<TelaHome />
-
-
+  <ContaCadastro />
 </template>
 
 <script>
 export default {
-  name: 'PaginaHome'
-}
 
+}
 </script>
 
-<style scoped>
-
-</style>
+<style>
 
 </style>
